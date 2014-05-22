@@ -1,21 +1,62 @@
 <h1>Javascript見出し</h1>
 
 <?php 
-/* Drop コーディング中
-	$drop_event = '$(this).css("background-color",ui.draggable.css("background-color"));
-			$(this).text(ui.draggable.text())';
-	$this->Js->get('.drag')->
+	$change = "$('#val').text(ui.value)";
+	$this->Js->get('#slider')->slider(array('min'=>0,'max'=>100,'step'=>5,'slide'=>$change));
+	echo $this->Js->writeBuffer();
+	
+	echo $this->Html->div(null,'value',array('id'=>'val','style'=>'font-size:18pt;'));
+	echo $this->Html->div(null,'',array('id'=>'slider','style'=>'width:300px;'));
+?>
+
+<?php 
+/*	Sortable List	
+	$this->Js->get('#list')->sortable();
+	echo $this->Js->writeBuffer();
+	
+	$style = $this->Html->style(array('background'=>'#FCC','margin'=>'3px','width'=>'300px'));
+	
+	$list = $this->Html->div(null,'message1',array('style'=>$style));
+	$list .= $this->Html->div(null,'message2',array('style'=>$style));
+	$list .= $this->Html->div(null,'message3',array('style'=>$style));
+	echo $this->Html->div(null,$list,array('id'=>'list'));
 */
 ?>
 
 <?php 
+/*	Drop
+	$drop_event = '$(this).css("background-color",ui.draggable.css("background-color"));
+			$(this).text(ui.draggable.text())';
+	$this->Js->get('.drag')->drag(array('opacity'=>0.5));
+	$this->Js->get('.drop')->drop(array('drop'=>$drop_event));
+	echo $this->Js->writeBuffer();
+	
+	echo $this->Html->div('drop','ドロップ',array('id'=>'blue',
+			'style'=>'position:absolute; top:200px; left:300px; width:200px; height:200px; background:#AAA;'
+	));
+	
+	echo $this->Html->div('drag','レッド',array('id'=>'red',
+			'style'=>'width:100px; height:100px; background:#F66;'
+	));
+	
+	echo $this->Html->div('drag','グリーン',array('id'=>'green',
+			'style'=>'width:100px; height:100px; background:#9F9;'
+	));
+	
+	echo $this->Html->div('drag','ブル',array('id'=>'blue',
+			'style'=>'width:100px; height:100px; background:#33F;'
+	));
+*/
+?>
 
+<?php 
+/*	Drag
 	$this->Js->get('#img')->drag(array('opacity'=>0.5));
 	echo $this->Js->writeBuffer();
 	
 	//echo $this->Html->div(null,'message',array('id'=>'msg','style'=>'width:100px;height:100px;background:#AAA;'));
 	echo $this->Html->image('nhatrang.jpg',array('id'=>'img'));
-
+*/
 ?>
 
 <?php 

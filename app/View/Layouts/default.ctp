@@ -23,6 +23,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <html>
 <head>
 	<?php 
+	// Css
+	echo $this->Html->css('jquery-ui-1.10.4.css');
 	// jQuery
 	echo $this->Html->script('jquery-2.1.1.js', array( 'inline' => 'false'));
 	echo $this->Html->script('jquery-ui-1.10.4.js', array('inline' => 'false'));
