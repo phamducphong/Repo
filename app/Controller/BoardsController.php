@@ -3,6 +3,7 @@ class BoardsController extends AppController{
 	
 	public $name = 'Board';
 	public $uses = array('Board', 'Personal');
+	public $components = array('Auth'=>array('authError'=>'ログインしてください。'));
 	
 	public function index(){
 		$data = $this->Board->find('all',array('order'=>'Board.id desc'));
@@ -62,5 +63,6 @@ class BoardsController extends AppController{
 		));
 		$this->set('data',$data);
 	}
+	
 }
 ?>
