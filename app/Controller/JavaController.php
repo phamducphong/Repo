@@ -16,7 +16,7 @@ class JavaController extends AppController{
 		if(empty($pattern)){
 			$pattern = 'Y/m/d H:i:s';
 		}
-		echo '現在の日付:' . date($pattern);
+		echo '今日の日付:' . date($pattern);
 		
 		/*
 		$t = time();
