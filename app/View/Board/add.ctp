@@ -10,6 +10,7 @@
 	<br><hr><br>
 	
 	<?php 
+		
 		echo $this->Form->create(false,array('type'=>'post','action'=>''));
 		
 		echo '名前' . $this->Form->text('Personal.name');
@@ -25,6 +26,7 @@
 		echo $this->Form->error('Board.content');
 		
 		echo $this->Form->end('送信');
+		
 	?>
 </body>
 </html>
