@@ -19,6 +19,7 @@
  */
 
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
 /**
  * Static content controller
@@ -73,5 +74,28 @@ class PagesController extends AppController {
 			}
 			throw new NotFoundException();
 		}
+	}
+	
+	
+	// CakeEmail
+	public $components = array('Session');
+	
+	public function contact(){
+		$this->loadModel('Contact');
+		echo 'test1 ';
+		if ($this->request->is('post')){
+			echo 'test2 ';
+			$email = new CakeEmail();
+			$email->config('contact');
+			$email->viewVars($this->request->data['Contact']);
+			print_r($email);
+			if ($email->send()){
+				$this->Session->setFlash('メール送信しました。');				
+			}else {
+				$this->Session->setFlash('メール失敗');
+			}
+		}
+		echo 'test3 ';
+		$this->render();
 	}
 }
