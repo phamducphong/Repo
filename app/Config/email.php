@@ -96,7 +96,6 @@ class EmailConfig {
 			'host' => 'ssl://smtp.gmail.com',
 			'port' => 465,
 			'username' => 'ducphong9984@gmail.com',
-			'password' => 'Takatu2012',
 			'from' => 'ducphong9984@gmail.com',
 			'to' => 'pham.duc.phong@zeevaa.com',
 			'subject' => '問い合わせがあります。',
